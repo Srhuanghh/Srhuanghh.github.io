@@ -1,0 +1,169 @@
+<html>
+    
+        <body>      
+           
+            <div style="margin-left: auto; margin-right: auto; margin-top: 40px;
+            padding: 20px; width: 500px; font-size: 16px; font-family:'Segoe UI', sans-serif;">
+            Sirui-Bot👧
+           
+           <div style=" margin-top:6px; padding: 20px; background-color: #a8edbe;
+           border: 4px solid #8ec8df; border-radius: 25px;">
+        
+            <form name="chatForm">
+                <p id="botSays">What is your name ? </p>
+                <br>         
+                <input type="text" name="userInput" >
+                <input type="button" value="Send" onClick="displayFeedback(this.form)">
+        
+            </form>
+           </div>
+           </div>  
+        
+        <script>
+        
+        var counter=0;
+        var myMajor="psychology";
+        
+        //create a list of the majors you are/ were interested in
+        var majorInterestedList=["biology", "psychology", "datascience", "neuroscience" ];
+        
+        var userName;
+        var favoriteArtist="twice"
+        //create a list of the artists you are/were interested in
+        var artistInterestedList=["twice","aespa","balckpink","ive"]
+        
+            function displayFeedback(form) {
+        
+                counter++;
+        
+                var feedbackText="";
+                var newQuestionText="";
+        
+                var userInput= form.userInput.value;
+        
+                if (counter==1) {        
+                    userName= userInput;
+                    feedbackText="Hello, "+ userName+" ! " +"<br>Nice to meet you."+
+                    " I am Sirui, a freshman at Mount Holyoke College.";
+        
+                    newQuestionText="Do you also attend Mount Holyoke College ?";              
+                }
+        
+                if (counter==2) {        
+                    feedbackText="Thanks for sharing."; 
+                    newQuestionText="What is your major ?";              
+                }
+        
+                if (counter==3) {
+        
+                    //we are converting the userinput into lowercase for comparison     
+                    if (userInput.toLowerCase()== myMajor) feedbackText="Great! I am also majoring in "+ userInput+"."; 
+                    
+                    else {
+                        feedbackText="I guess you must find "+userInput+" very interesting."+" I am majoring in "+myMajor;
+                        
+                        //check if user's major is one the majors in your majorInterestedList 
+                        for (let i = 0; i < majorInterestedList.length; i++) {      
+                            if (userInput.toLowerCase() == majorInterestedList[i]) {
+                                feedbackText=userInput+ " was one of the majors I was interested to pursue."+
+                                " I am now majoring in "+myMajor+".";
+                            }    
+                        }
+                }
+        
+                newQuestionText="Who's your favorite artist?"; 
+                }
+        
+        if (counter==4) {
+        
+        //we are converting the userinput into lowercase for comparison     
+        if (userInput.toLowerCase()== favoriteArtist) feedbackText="Great! I love "+ userInput+"."; 
+        
+        else {
+            feedbackText="I guess you must love "+userInput+" very much."+" I love "+favoriteArtist;
+            //check if user's favorite artist is one the artists in your favoriteArtistList 
+            for (let i = 0; i < artistInterestedList.length; i++) {      
+                if (userInput.toLowerCase() == artistInterestedList[i]) {
+                    feedbackText=userInput+ " was one of the artists I was interested in."+
+                    " I am now a fan of "+favoriteArtist+".";
+                }    
+            }
+        }
+        }
+                
+                    
+                //update the feedback and clear the input box
+                document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+                form.userInput.value=""; 
+            }
+        
+        </script>
+        </body>
+        
+<head>
+<title>My Web Page</title>
+</head>
+
+<BODY BGCOLOR=PINK TEXT=PURPLE>
+<H1><Center>Hello</Center></H1>
+
+<FONT COLOR="red" SIZE=6>introduce myself</FONT>
+<p>My name is Sirui</p>
+<p><B>Firstyear</B></p>
+<p>my dorm is<br> Brigham 413</p>
+&hearts;
+<p>I'm so<br>happy to meet you all&diams;</p>
+<p><I>come to my dorm and chat</I></p>
+Welcome to <a HREF="https://www.mtholyoke.edu">MHC!</a>
+And Welcome to <a HREF="https://events.mtholyoke.edu/brigham_hall_662">Brigham!</a>
+<p>My top 5 Kpop groups</p>
+<ul>
+    <li> Twice
+    <li> Itzy
+    <li> Blackpink
+    <li> aespa
+    <li> Ive
+    </ul>
+<p>members in two kpop groups</p>
+<table>
+    <tr>
+      <th>blackpink</th>
+      <th>aespa</th>
+    </tr>
+    <tr>
+      <td>Jisoo</td>
+      <td>Karina</td>
+    </tr>
+    <tr>
+      <td>Jennie</td>
+      <td>Giselle</td>
+    </tr>
+    <tr>
+        <td>Rose</td>
+        <td>Winter</td>
+    </tr>
+    <tr>
+        <td>Lisa</td>
+        <td>Ningning</td>
+    </tr>
+    </table>
+<Br>
+<Br>
+<Br>
+<Br>
+<p>My favorite Kpop group</p>
+<img src="https://api.time.com/wp-content/uploads/2019/10/00.-twice-e18486e185b5e18482e185b5-8e1848ce185b5e186b8-feel-special_a-twice_e1848fe185b3e186afe18485e185b5e186ab.jpg" width="800" height="600">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jCzez_q8si0?si=zo8Y8TgA81g4YDPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>And their song!</p>
+<audio controls>
+    <source src="/Users/sylviahuang/Desktop/TWICE _The Feels_ MV.mp3" type="audio/mpeg">
+</audio>
+<form>
+    <label for="fname">Your favorite kpop girl group:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Your favorite kpop boy group:</label><br>
+    <input type="text" id="lname" name="lname">
+    <input type="submit" value="Submit"><br>  
+  </form>
+</body>
+</html>
